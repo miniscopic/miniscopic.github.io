@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pocket Pip Support</title>
+<style>
+  :root { --bg:#f6e9e0; --card:#fffaf6; --ink:#4a3a34; --soft:#7d6a62; --line:#ead8cc; --accent:#c9877a; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#2a221f; --card:#352b27; --ink:#f3e6de; --soft:#c4b1a7; --line:#4a3d37; --accent:#e2a597; } }
+  :root[data-theme="dark"] { --bg:#2a221f; --card:#352b27; --ink:#f3e6de; --soft:#c4b1a7; --line:#4a3d37; --accent:#e2a597; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
+  main { max-width:680px; margin:0 auto; padding:28px 16px 48px; }
+  h1 { font-size:26px; margin:0 0 4px; }
+  .lead { color:var(--soft); margin:0 0 20px; }
+  section { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 18px; margin:0 0 14px; }
+  h2 { font-size:17px; margin:0 0 6px; }
+  p { margin:6px 0; }
+  a { color:var(--accent); }
+  main[hidden] { display:none; }
+</style>
+</head>
+<body>
+<main id="en">
+  <h1>Pocket Pip Support</h1>
+  <p class="lead">Questions, a bug, or a word card that looks wrong? We'd love to hear from you.</p>
+
+  <section>
+    <h2>Contact us</h2>
+    <p>Email <a href="mailto:miniscopic.studio@gmail.com">miniscopic.studio@gmail.com</a>. Tell us your phone model and what happened, and we'll get back to you.</p>
+  </section>
+
+  <section>
+    <h2>Premium and ad breaks</h2>
+    <p>Premium turns off the short ad breaks between word cards. Every deck is free with or without it.</p>
+    <p><b>Restore Premium on a new phone:</b> in Words.exe, open the Start menu, tap <b>Go ad-free</b> (or <b>Premium</b>), then <b>Restore purchases</b>.</p>
+    <p><b>Cancel or change your plan:</b> on iPhone, open Settings, tap your name, then <b>Subscriptions</b>. On Android, open Google Play, tap your profile, then <b>Payments &amp; subscriptions</b>. You can also tap <b>Manage subscription</b> on the Premium page.</p>
+  </section>
+
+  <section>
+    <h2>Moving to a new phone</h2>
+    <p>Open the <b>You</b> panel and tap <b>Get a transfer code</b>, then enter the code on the new phone. Your home, Sparkles, things you own and your room on the street all move over.</p>
+  </section>
+
+  <section>
+    <h2>Deleting your account</h2>
+    <p>Open the <b>You</b> panel and tap <b>Delete my account</b>. Deleting the app alone doesn't delete your online account.</p>
+  </section>
+
+  <section>
+    <h2>Privacy</h2>
+    <p>Read the <a href="privacy.html">Pocket Pip Privacy Policy</a>.</p>
+  </section>
+</main>
+<main id="zh" lang="zh-Hant" hidden>
+  <h1>口袋豆釘（Pocket Pip）支援</h1>
+  <p class="lead">有問題、遇到錯誤，或發現單字卡有誤？歡迎告訴我們。</p>
+
+  <section>
+    <h2>聯絡我們</h2>
+    <p>請寄信到 <a href="mailto:miniscopic.studio@gmail.com">miniscopic.studio@gmail.com</a>，告訴我們你的手機型號和發生了什麼事，我們會盡快回覆。</p>
+  </section>
+
+  <section>
+    <h2>進階會員和廣告時間</h2>
+    <p>進階會員會關閉單字卡之間的短暫廣告時間。不論是否訂閱，所有牌組都免費。</p>
+    <p><b>在新手機上恢復進階會員：</b>在 Words.exe 打開「開始」選單，點<b>「免廣告」</b>（或<b>「進階會員」</b>），再點<b>「恢復購買」</b>。</p>
+    <p><b>取消或更改方案：</b>iPhone 請打開「設定」，點你的名字，再點<b>「訂閱項目」</b>。Android 請打開 Google Play，點你的個人資料，再點<b>「付款和訂閱」</b>。你也可以在進階會員頁面點<b>「管理訂閱」</b>。</p>
+  </section>
+
+  <section>
+    <h2>搬到新手機</h2>
+    <p>打開<b>「你」</b>面板，點<b>「取得轉移代碼」</b>，再到新手機上輸入。你的家、星光、擁有的東西和街上的房間都會一起搬過去。</p>
+  </section>
+
+  <section>
+    <h2>刪除帳號</h2>
+    <p>打開<b>「你」</b>面板，點<b>「刪除我的帳號」</b>。只刪除 App 並不會刪除你的線上帳號。</p>
+  </section>
+
+  <section>
+    <h2>隱私權</h2>
+    <p>請閱讀<a href="privacy.html?lang=zh">口袋豆釘隱私權政策</a>。</p>
+  </section>
+</main>
+<script>
+// Traditional Chinese for players reading in it: ?lang=zh, the game's choice (pocketPip.lang), else the phone's language
+(function () {
+  let lang = new URLSearchParams(location.search).get('lang');
+  try { lang = lang || localStorage.getItem('pocketPip.lang'); } catch (_) {}
+  if (lang !== 'en' && lang !== 'zh') lang = /^zh-(hant|tw|hk|mo)/i.test((navigator.languages && navigator.languages[0]) || navigator.language || '') ? 'zh' : 'en';
+  if (lang !== 'zh') return;
+  document.getElementById('en').hidden = true; document.getElementById('zh').hidden = false;
+  document.documentElement.lang = 'zh-Hant'; document.title = '口袋豆釘支援';
+})();
+</script>
+</body>
+</html>
